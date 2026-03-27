@@ -1,0 +1,21 @@
+.c-menu{
+    background: silver;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+}
+
+.c-menu img{
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.c-menu p {
+    font-size: 14px
+}
