@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 interface TeamData {
@@ -34,6 +34,10 @@ function Equipo() {
 
     useEffect(() => {
   if (!equipo) return;
+  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+  if (favorites.includes(equipo)) {
+    setIsFavorite(true);
+  }
 
   const fetchData = async () => {
     try {
@@ -56,6 +60,11 @@ function Equipo() {
 
   return (
     <div>
+
+      <h1>  
+        {data.team.name }
+
+      </h1>
       <p> {data?.team.name}</p>
             <h2>Información</h2>
       <p><strong>Ciudad:</strong> {data.team.info.city}</p>
